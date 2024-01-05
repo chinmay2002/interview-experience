@@ -2,8 +2,8 @@ const UBSLogo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="800"
-      width="1200"
+      height="200"
+      width="300"
       viewBox="-44.7 -26.98425 387.4 161.9055"
     >
       <path

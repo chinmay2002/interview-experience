@@ -10,6 +10,8 @@ const USTLogo = () => {
       viewBox="0 0 652 652"
       style={{ enableBackground: "new 0 0 652 652" }}
       xmlSpace="preserve"
+      width="10%"
+      height="10%"
     >
       <path
         d="M186.9,380c29,0,57.9,12.3,71.2,34.5l-31.5,25.5c-10.7-9.7-23.8-16.7-40-16.7c-17.6,0-26.1,7.2-26.1,13.8

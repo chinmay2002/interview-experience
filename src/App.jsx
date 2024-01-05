@@ -17,7 +17,7 @@ function App() {
         <Route path="/placementform" element={<PlacementForm />} />
         <Route path="/companycriteriaform" element={<CompanyCriteriaPage />} />
         <Route path="/companydetails" element={<CriteriaDetailsPage />} />
-        <Route path="/companyoverview" element={<CompanyOverview />} />
+        <Route path="/companyoverview/:company" element={<CompanyOverview />} />
       </Routes>
     </Router>
   );
