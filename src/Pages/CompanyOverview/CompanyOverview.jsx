@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import { Gradient } from "./Gradient";
 import { COMPANY_OVERVIEW_DATA } from "../../assets/CompanyOverviewData";
 
 import InfoCard from "./InfoCard/InfoCard";
 // import RolesRecruited from "./RolesRecruited";
 
-import "./CompanyOverview.css";
+import "./CompanyOverview.scss";
 
 const CompanyOverview = () => {
   const { company } = useParams();
   const CompanyLogo = COMPANY_OVERVIEW_DATA[company].logo;
   const [displayRoles, setDisplayRoles] = useState([]);
+
+  useEffect(() => {
+    const gradient = new Gradient();
+    gradient.initGradient("#dynamic-gradient");
+  }, []);
 
   useEffect(() => {
     const updateDisplayRoles = () => {
@@ -61,72 +67,86 @@ const CompanyOverview = () => {
 
   return (
     <div className="company-overview-wrapper">
-      <div
-        style={{
-          width: "max-content",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-        }}
-      >
-        <div className="company-logo-frame">
-          <CompanyLogo className="company-logo" />
-        </div>
-        <span className="company-name">
-          {COMPANY_OVERVIEW_DATA[company].name}
-        </span>
-      </div>
-      <div className="sub-section">
-        <div className="sub-section-title-wrapper">
-          <hr />
-          <span className="sub-section-title">About</span>
-          <hr />
-        </div>
-        {COMPANY_OVERVIEW_DATA[company].description.map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
-      </div>
-      <div className="sub-section">
-        <div className="sub-section-title-wrapper">
-          <hr />
-          <span className="sub-section-title">Campus History</span>
-          <hr />
-        </div>
-        <div style={{ display: "flex", gap: "32px", width: "100%" }}>
-          <InfoCard
-            magnitude={
-              COMPANY_OVERVIEW_DATA[company].campusHistory.onCampusRecruitments
-            }
-            label="On-Campus Recruitments*"
-          />
-          <InfoCard
-            magnitude={
-              COMPANY_OVERVIEW_DATA[company].campusHistory.lastYearRecruitments
-            }
-            label="Last-year Recruitments*"
-          />
-          <InfoCard
-            magnitude={COMPANY_OVERVIEW_DATA[company].campusHistory.topPackage}
-            label="Top package offered*"
-            subLabel="LPA"
-          />
-          <InfoCard
-            magnitude={
-              COMPANY_OVERVIEW_DATA[company].campusHistory.averagePackage
-            }
-            label="Average package*"
-            subLabel="LPA"
-          />
+      <div className="company-banner">
+        <canvas
+          style={{
+            "--gradient-color-1": "#ef008f",
+            "--gradient-color-2": "#6ec3f4",
+            "--gradient-color-3": "#7038ff",
+            "--gradient-color-4": "#e2e2e2",
+          }}
+          id="dynamic-gradient"
+          data-transition-in
+        />
+        <div className="logo-wrapper">
+          <div className="logo-frame">
+            <CompanyLogo className="company-logo" />
+          </div>
         </div>
       </div>
-      <div className="sub-section">
-        <div className="sub-section-title-wrapper">
-          <hr />
-          <span className="sub-section-title">Roles Recruited</span>
-          <hr />
+      <div className="main-content">
+        <div className="card-bottom">
+          <span className="company-name">
+            {COMPANY_OVERVIEW_DATA[company].name}
+          </span>
+          <div className="sub-section">
+            <div className="sub-section-title-wrapper">
+              <hr />
+              <span className="sub-section-title">About</span>
+              <hr />
+            </div>
+            {COMPANY_OVERVIEW_DATA[company].description.map(
+              (paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              )
+            )}
+          </div>
+          <div className="sub-section">
+            <div className="sub-section-title-wrapper">
+              <hr />
+              <span className="sub-section-title">Campus History</span>
+              <hr />
+            </div>
+            <div style={{ display: "flex", gap: "32px", width: "100%" }}>
+              <InfoCard
+                magnitude={
+                  COMPANY_OVERVIEW_DATA[company].campusHistory
+                    .onCampusRecruitments
+                }
+                label="On-Campus Recruitments*"
+              />
+              <InfoCard
+                magnitude={
+                  COMPANY_OVERVIEW_DATA[company].campusHistory
+                    .lastYearRecruitments
+                }
+                label="Last-year Recruitments*"
+              />
+              <InfoCard
+                magnitude={
+                  COMPANY_OVERVIEW_DATA[company].campusHistory.topPackage
+                }
+                label="Top package offered*"
+                subLabel="LPA"
+              />
+              <InfoCard
+                magnitude={
+                  COMPANY_OVERVIEW_DATA[company].campusHistory.averagePackage
+                }
+                label="Average package*"
+                subLabel="LPA"
+              />
+            </div>
+          </div>
+          <div className="sub-section">
+            <div className="sub-section-title-wrapper">
+              <hr />
+              <span className="sub-section-title">Roles Recruited</span>
+              <hr />
+            </div>
+            <span>{displayRoles.join(" | ")}</span>
+          </div>
         </div>
-        <span>{displayRoles.join(" | ")}</span>
       </div>
     </div>
   );
