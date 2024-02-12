@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { Gradient } from "./Gradient";
 import { COMPANY_OVERVIEW_DATA } from "../../assets/CompanyOverviewData";
 
+import TCS from "../../assets/CompanyLogos/TCS.png";
+
 import InfoCard from "./InfoCard/InfoCard";
 // import RolesRecruited from "./RolesRecruited";
 
@@ -11,7 +13,7 @@ import "./CompanyOverview.scss";
 
 const CompanyOverview = () => {
   const { company } = useParams();
-  const CompanyLogo = COMPANY_OVERVIEW_DATA[company].logo;
+  // const CompanyLogo = COMPANY_OVERVIEW_DATA[company].logo;
   const [displayRoles, setDisplayRoles] = useState([]);
 
   useEffect(() => {
@@ -80,7 +82,8 @@ const CompanyOverview = () => {
         />
         <div className="logo-wrapper">
           <div className="logo-frame">
-            <CompanyLogo className="company-logo" />
+            {/* <CompanyLogo className="company-logo" /> */}
+            <img src={TCS} alt="TCS LOGO" style={{ width: "100%" }} />
           </div>
         </div>
       </div>

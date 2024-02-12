@@ -1,11 +1,12 @@
 .info-card {
-  border: 1px solid;
+  border: 1px solid ghostwhite;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   flex: 1;
   gap: 16px;
   padding: 24px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .top {
