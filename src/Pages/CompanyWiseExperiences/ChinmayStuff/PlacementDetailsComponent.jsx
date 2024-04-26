@@ -27,7 +27,7 @@ const PlacementDetailsComponent = () => {
     <>
       {" "}
       <h2 className="text-xl font-bold mb-4">
-        Placement Details for {placements[0].companyName}
+        {/* Placement Details for {placements[0].companyName} */}
       </h2>
       {placements.map((ind) => {
         return (
