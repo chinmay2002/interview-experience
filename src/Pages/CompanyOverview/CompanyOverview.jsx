@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Gradient } from "./Gradient";
 import { COMPANY_OVERVIEW_DATA } from "../../assets/CompanyOverviewData";
 import { getColorPalette } from "../../functions/Color";
+import TabToggler from "../../components/TabToggler/TabToggler";
 
 import InfoCard from "./InfoCard/InfoCard";
 // import RolesRecruited from "./RolesRecruited";
@@ -178,6 +179,7 @@ const CompanyOverview = () => {
           </div>
         </div>
       </div>
+      <TabToggler />
     </div>
   );
 };
