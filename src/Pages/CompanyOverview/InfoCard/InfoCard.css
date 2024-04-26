@@ -19,6 +19,8 @@
 .top hr {
   height: 100%;
   margin: 0 12px 0 0;
+  border: none; /* Remove border */
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .top .magnitude {
