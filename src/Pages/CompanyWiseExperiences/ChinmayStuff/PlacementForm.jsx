@@ -16,6 +16,11 @@ const PlacementForm = () => {
   const [experience2, setExperience2] = useState("");
   const [selectedCompany, setSelectedCompany] = useState("");
   const [companies, setCompanies] = useState([]);
+  const [isPlaced, setIsPlaced] = useState(false);
+  const [numRounds, setNumRounds] = useState(0);
+  const [graduationYear, setGraduationYear] = useState("");
+  const [course, setCourse] = useState("");
+  const [roleOffered, setRoleOffered] = useState("");
 
   // Fetch available companies from Firestore
   const fetchCompanies = async () => {
@@ -43,6 +48,11 @@ const PlacementForm = () => {
         experience,
         experience2,
         companyName: selectedCompany,
+        placed: isPlaced,
+        rounds: numRounds,
+        graduationYear,
+        course,
+        roleOffered,
       });
 
       console.log("Document written with ID: ", docRef.id);
@@ -52,6 +62,11 @@ const PlacementForm = () => {
       setExperience("");
       setExperience2("");
       setSelectedCompany("");
+      setIsPlaced(false);
+      setNumRounds(0);
+      setGraduationYear("");
+      setCourse("");
+      setRoleOffered("");
     } catch (error) {
       console.error("Error adding document: ", error);
     }
@@ -63,10 +78,10 @@ const PlacementForm = () => {
       justifyContent="center"
       alignItems="center"
       height="100vh"
+      pt={32}
     >
-     
       <form onSubmit={handleSubmit} style={{ width: "40%", justifyContent:"center",
-      alignItems:"center",alignSelf: "center" }} 
+      alignItems:"center",alignSelf: "center" }}  
       >
          <Box textAlign="center" marginBottom={2}>
           <Typography variant="h5">Add Your Experience</Typography>
@@ -89,6 +104,75 @@ const PlacementForm = () => {
             onChange={(e) => setBranch(e.target.value)}
           />
         </FormControl>
+        <FormControl fullWidth margin="normal">
+          <InputLabel id="select-company-placeholder">Select Company</InputLabel>
+          <Select
+            labelId="select-company-placeholder"
+            variant="outlined"
+            fullWidth
+            value={selectedCompany}
+            onChange={(e) => setSelectedCompany(e.target.value)}
+            label="Select Company"
+          >
+            <MenuItem value="">Select Company</MenuItem> {/* Placeholder */}
+            {companies.map((company) => (
+              <MenuItem key={company.id} value={company.name}>
+                {company.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <FormControl fullWidth margin="dense">
+          <TextField
+            label="Year of Graduation"
+            variant="outlined"
+            fullWidth
+            value={graduationYear}
+            onChange={(e) => setGraduationYear(e.target.value)}
+          />
+        </FormControl>
+        <FormControl fullWidth margin="dense">
+          <TextField
+            label="Course"
+            variant="outlined"
+            fullWidth
+            value={course}
+            onChange={(e) => setCourse(e.target.value)}
+          />
+        </FormControl>
+        <FormControl fullWidth margin="dense">
+          <TextField
+            label="Role Offered"
+            variant="outlined"
+            fullWidth
+            value={roleOffered}
+            onChange={(e) => setRoleOffered(e.target.value)}
+          />
+        </FormControl>
+        <FormControl fullWidth margin="dense">
+          <TextField
+            label="Number of Rounds"
+            variant="outlined"
+            fullWidth
+            type="number"
+            value={numRounds}
+            onChange={(e) => setNumRounds(parseInt(e.target.value))}
+          />
+        </FormControl>
+        <FormControl fullWidth margin="normal">
+          <InputLabel id="placed-status-placeholder">Placed Status</InputLabel>
+          <Select
+            labelId="placed-status-placeholder"
+            variant="outlined"
+            fullWidth
+            value={isPlaced}
+            onChange={(e) => setIsPlaced(e.target.value)}
+          >
+            <MenuItem value={true}>Placed</MenuItem>
+            <MenuItem value={false}>Unplaced</MenuItem>
+          </Select>
+        </FormControl>
+        
         <FormControl fullWidth margin="dense">
           <TextField
             label="Please add about pre-screening rounds"
@@ -111,30 +195,12 @@ const PlacementForm = () => {
             onChange={(e) => setExperience2(e.target.value)}
           />
         </FormControl>
-        <FormControl fullWidth margin="normal">
-      <InputLabel id="select-company-placeholder">Select Company</InputLabel>
-      <Select
-        labelId="select-company-placeholder"
-        variant="outlined"
-        fullWidth
-        value={selectedCompany}
-        onChange={(e) => setSelectedCompany(e.target.value)}
-        label="Select Company" // This is where we set the label prop for the placeholder
-      >
-        <MenuItem value="">Select Company</MenuItem> {/* Placeholder */}
-        {companies.map((company) => (
-          <MenuItem key={company.id} value={company.name}>
-            {company.name}
-          </MenuItem>
-        ))}
-      </Select>
-    </FormControl>
         <FormControl fullWidth margin="normal" style={{ alignSelf: "center", justifyContent:"center",
       alignItems:"center" }}>
-      <Button type="submit" variant="contained" style={{ backgroundColor: "black", color: "white", width: "25%" }}>
-  Submit
-</Button>
-    </FormControl>
+          <Button type="submit" variant="contained" style={{ backgroundColor: "black", color: "white", width: "25%" }}>
+            Submit
+          </Button>
+        </FormControl>
       </form>
     </Box>
   );
