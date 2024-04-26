@@ -5,7 +5,10 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-
+import Box from "@mui/material/Box";
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Typography from '@mui/material/Typography'
 const PlacementForm = () => {
   const [personName, setPersonName] = useState("");
   const [branch, setBranch] = useState("");
@@ -55,61 +58,85 @@ const PlacementForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        label="Full Name"
-        variant="outlined"
-        fullWidth
-        value={personName}
-        onChange={(e) => setPersonName(e.target.value)}
-        margin="dense"
-      />
-      <TextField
-        label="Branch"
-        variant="outlined"
-        fullWidth
-        value={branch}
-        onChange={(e) => setBranch(e.target.value)}
-        margin="dense"
-      />
-      <TextField
-        label="Experience"
-        variant="outlined"
-        fullWidth
-        multiline
-        rows={4}
-        value={experience}
-        onChange={(e) => setExperience(e.target.value)}
-        margin="dense"
-      />
-      <TextField
-        label="Experience 2"
-        variant="outlined"
-        fullWidth
-        multiline
-        rows={4}
-        value={experience2}
-        onChange={(e) => setExperience2(e.target.value)}
-        margin="dense"
-      />
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      height="100vh"
+    >
+     
+      <form onSubmit={handleSubmit} style={{ width: "40%", justifyContent:"center",
+      alignItems:"center",alignSelf: "center" }} 
+      >
+         <Box textAlign="center" marginBottom={2}>
+          <Typography variant="h5">Add Your Experience</Typography>
+        </Box>
+        <FormControl fullWidth margin="dense">
+          <TextField
+            label="Full Name"
+            variant="outlined"
+            fullWidth
+            value={personName}
+            onChange={(e) => setPersonName(e.target.value)}
+          />
+        </FormControl>
+        <FormControl fullWidth margin="dense">
+          <TextField
+            label="Branch"
+            variant="outlined"
+            fullWidth
+            value={branch}
+            onChange={(e) => setBranch(e.target.value)}
+          />
+        </FormControl>
+        <FormControl fullWidth margin="dense">
+          <TextField
+            label="Please add about pre-screening rounds"
+            variant="outlined"
+            fullWidth
+            multiline
+            rows={4}
+            value={experience}
+            onChange={(e) => setExperience(e.target.value)}
+          />
+        </FormControl>
+        <FormControl fullWidth margin="dense">
+          <TextField
+            label="Please add about Interview-Experience"
+            variant="outlined"
+            fullWidth
+            multiline
+            rows={4}
+            value={experience2}
+            onChange={(e) => setExperience2(e.target.value)}
+          />
+        </FormControl>
+        <FormControl fullWidth margin="normal">
+      <InputLabel id="select-company-placeholder">Select Company</InputLabel>
       <Select
-        label="Company"
+        labelId="select-company-placeholder"
         variant="outlined"
         fullWidth
         value={selectedCompany}
         onChange={(e) => setSelectedCompany(e.target.value)}
-        margin="normal"
+        label="Select Company" // This is where we set the label prop for the placeholder
       >
+        <MenuItem value="">Select Company</MenuItem> {/* Placeholder */}
         {companies.map((company) => (
           <MenuItem key={company.id} value={company.name}>
             {company.name}
           </MenuItem>
         ))}
       </Select>
-      <Button type="submit" variant="contained" color="primary">
-        Submit
-      </Button>
-    </form>
+    </FormControl>
+        <FormControl fullWidth margin="normal" style={{ alignSelf: "center", justifyContent:"center",
+      alignItems:"center" }}>
+      <Button type="submit" variant="contained" style={{ backgroundColor: "black", color: "white", width: "25%" }}>
+  Submit
+</Button>
+    </FormControl>
+      </form>
+    </Box>
   );
 };
 
