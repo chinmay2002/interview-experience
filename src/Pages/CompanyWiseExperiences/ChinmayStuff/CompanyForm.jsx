@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
+import { Box, TextField, Button, Typography } from "@mui/material";
 
 const CompanyForm = () => {
   const [companyName, setCompanyName] = useState("");
@@ -24,23 +25,41 @@ const CompanyForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full">
-      <input
-        type="text"
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      pt={20}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        maxWidth: "300px", // Adjusted width of the form
+        margin: "0 auto", // Centering the form horizontally
+      }}
+    >
+      <Typography variant="h5" gutterBottom>
+        Enter Company Name
+      </Typography>
+      <TextField
+        margin="normal"
+        required
+        fullWidth
         id="companyName"
+        label="Company Name"
         name="companyName"
         value={companyName}
         onChange={(e) => setCompanyName(e.target.value)}
-        className="border text-black border-gray-300 rounded-md px-4 py-2 w-full mb-4"
-        placeholder="Company Name"
+        variant="outlined"
       />
-      <button
+      <Button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded"
+        variant="contained"
+        color="primary"
+        sx={{ mt: 2, width: "50%",  backgroundColor: "black", color: "white", }} // Adjusted width of the button
       >
         Submit
-      </button>
-    </form>
+      </Button>
+    </Box>
   );
 };
 
