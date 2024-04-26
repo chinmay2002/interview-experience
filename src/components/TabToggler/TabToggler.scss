@@ -1,3 +1,18 @@
+.tab-toggler {
+  align-items: center;
+  border: 1px solid #313866;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  padding: 4px 52px;
+
+  .button {
+    padding: 2% 8%;
+    border-radius: 8px;
+    min-width: max-content;
+  }
+}
+
 .active {
   background-color: #313866;
   color: white;
@@ -5,4 +20,5 @@
 }
 
 .inactive {
+  background-color: white;
 }

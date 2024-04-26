@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./TabToggler";
+import "./TabToggler.scss";
 
 const TabToggler = () => {
   const [activeButton, setActiveButton] = useState("button1");
@@ -10,21 +10,25 @@ const TabToggler = () => {
   };
 
   return (
-    <div>
+    <div className="tab-toggler">
       <button
         onClick={() => handleButtonClick("button1")}
-        className={activeButton === "button1" ? "active" : "inactive"}
+        className={`button ${
+          activeButton === "button1" ? "active" : "inactive"
+        }`}
       >
         Interview Experiences
       </button>
       <button
         onClick={() => handleButtonClick("button2")}
-        className={activeButton === "button1" ? "active" : "inactive"}
+        className={`button ${
+          activeButton === "button2" ? "active" : "inactive"
+        }`}
+        disabled
+        style={{ cursor: "not-allowed" }}
       >
         Preparation Guide
       </button>
-      {activeButton === "button1" && <div>Content for Button 1</div>}
-      {activeButton === "button2" && <div>Content for Button 2</div>}
     </div>
   );
 };

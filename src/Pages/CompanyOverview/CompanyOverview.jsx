@@ -176,9 +176,9 @@ const CompanyOverview = () => {
             </div>
             <span>{displayRoles.join(" | ")}</span>
           </div>
+          <TabToggler />
         </div>
       </div>
-      <TabToggler />
     </div>
   );
 };
