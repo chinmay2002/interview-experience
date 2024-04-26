@@ -4,11 +4,13 @@ const NavBar = () => {
     <div className="bg-white shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-[#313866] text-2xl font-bold">Inteview-Ex</h1>
+          <Link to={"/"} className="text-[#313866] text-2xl font-bold">
+            Inteview-Ex
+          </Link>
           <div className="flex space-x-20 text-xl items-center">
-            <a href="#" className="text-[#313866]">
+            <Link to={"/"} className="text-[#313866]">
               Home
-            </a>
+            </Link>
             <a href="#" className="text-[#313866]">
               Contact
             </a>
