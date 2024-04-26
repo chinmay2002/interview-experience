@@ -1,0 +1,46 @@
+.info-card {
+  border: 1px solid ghostwhite;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
+  padding: 24px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  height: max-content;
+}
+
+.top hr {
+  height: 100%;
+  margin: 0 12px 0 0;
+}
+
+.top .magnitude {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.top .sub-label {
+  font-size: 20px;
+  line-height: 1;
+  margin-top: auto;
+  margin-bottom: 4px;
+}
+
+.bottom {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  height: max-content;
+}
+
+.bottom .label {
+  font-size: 20px;
+  font-weight: 400;
+}
