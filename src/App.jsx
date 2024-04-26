@@ -8,6 +8,8 @@ import LandingPage from "../src/Screens/LandingPage/LandingPage";
 // Company Overview Page Dependencies:
 import CompanyOverview from "./Pages/CompanyOverview/CompanyOverview";
 import NavBar from "./components/Navigation/NavBar";
+import CompanyListComponent from "./Pages/CompanyWiseExperiences/ChinmayStuff/CompanyListComponent";
+import PlacementDetailsComponent from "./Pages/CompanyWiseExperiences/ChinmayStuff/PlacementDetailsComponent";
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
         <Route path="/companycriteriaform" element={<CompanyCriteriaPage />} />
         <Route path="/companydetails" element={<CriteriaDetailsPage />} />
         <Route path="/companyoverview/:company" element={<CompanyOverview />} />
+        <Route path="/companylist" element={<CompanyListComponent />} />
+        <Route path="/companywiseexperience" element={<CompanyWiseExperiences />} />
+        <Route path="/placementdetailscomponent" element={<PlacementDetailsComponent />} />
       </Routes>
     </Router>
   );
