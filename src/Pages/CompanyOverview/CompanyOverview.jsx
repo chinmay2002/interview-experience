@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
 import { Gradient } from "./Gradient";
 import { COMPANY_OVERVIEW_DATA } from "../../assets/CompanyOverviewData";
 import { getColorPalette } from "../../functions/Color";

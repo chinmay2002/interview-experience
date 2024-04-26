@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import "./TabToggler";
 
 const TabToggler = () => {
@@ -11,17 +13,13 @@ const TabToggler = () => {
     <div>
       <button
         onClick={() => handleButtonClick("button1")}
-        style={{
-          backgroundColor: activeButton === "button1" ? "blue" : "grey",
-        }}
+        className={activeButton === "button1" ? "active" : "inactive"}
       >
         Interview Experiences
       </button>
       <button
         onClick={() => handleButtonClick("button2")}
-        style={{
-          backgroundColor: activeButton === "button2" ? "blue" : "grey",
-        }}
+        className={activeButton === "button1" ? "active" : "inactive"}
       >
         Preparation Guide
       </button>
