@@ -1,10 +1,83 @@
-import TCSLogo from "./CompanyLogos/TCSLogo";
-import UBSLogo from "./CompanyLogos/UBSLogo";
-import USTLogo from "./CompanyLogos/USTLogo";
+import TCSLogo from "./CompanyLogos/TCS.png";
+import UBSLogo from "./CompanyLogos/UBS.png";
+import USTLogo from "./CompanyLogos/UST.png";
+import DELTAXLogo from "./CompanyLogos/DELTAX.png";
+import ACCENTURELogo from "./CompanyLogos/ACCENTURE.png";
+import TATALogo from "./CompanyLogos/TATA.png";
 
 // This is a temporary file containing information about companies
 
 export const COMPANY_OVERVIEW_DATA = {
+  tatacommunications: {
+    name: "Tata Communications",
+    abbreviation: "Tata Comms",
+    logo: TATALogo,
+    description: [
+      "Tata Communications is a leading global provider of digital infrastructure and telecommunications solutions, with a legacy spanning decades. Since its inception, Tata Communications has been driving connectivity and innovation across the globe, delivering state-of-the-art solutions to a diverse clientele. At Tata Communications, you'll experience a dynamic and inclusive work culture that encourages collaboration, creativity, and continuous learning. The company is committed to nurturing talent, offering extensive training programs and mentorship opportunities to support employees in their professional development. Joining Tata Communications means becoming part of a global network of technology experts, where your skills are valued, and you contribute to shaping the digital future.",
+      "Diversity and inclusion are fundamental values at Tata Communications, creating a workplace where individuals from diverse backgrounds come together to drive success. Tata Communications prioritizes work-life balance and provides flexible work arrangements to meet individual needs. The company is deeply committed to corporate social responsibility, engaging in initiatives that promote community development and environmental sustainability. As a Tata Communications employee, you're not just part of a company; you're part of a socially responsible and forward-thinking community that values your unique contributions. Embark on a transformative journey with Tata Communications, where your career aspirations align with a global leader in digital infrastructure.",
+      "Tata Communications offers more than just a job; it's a platform for personal and professional growth. The collaborative work environment empowers employees to unleash their potential and drive innovation. With a global presence and a commitment to excellence, Tata Communications offers opportunities to make a real impact. Join Tata Communications and be part of a team that's shaping the future of digital connectivity.",
+    ],
+    campusHistory: {
+      onCampusRecruitments: 100,
+      lastYearRecruitments: 15,
+      topPackage: 14,
+      averagePackage: 6.5,
+    },
+    rolesRecruited: [
+      "Network Engineer",
+      "Telecommunications Engineer",
+      "Software Developer",
+      "Data Analyst",
+      "Cloud Solutions Architect",
+      "Cybersecurity Specialist",
+      "UX/UI Designer",
+      "Project Manager",
+      "Business Development Manager",
+      "Customer Support Engineer",
+      "Technical Consultant",
+      "System Administrator",
+      "Quality Assurance Analyst",
+      "Database Administrator",
+      "Front-end Developer",
+      "Back-end Developer",
+      "Mobile App Developer",
+    ],
+  },
+  accenture: {
+    name: "Accenture",
+    abbreviation: "ACN",
+    logo: ACCENTURELogo,
+    description: [
+      "Accenture is a global leader in technology services and consulting, with a rich heritage dating back decades. Since its inception, Accenture has been at the forefront of innovation, delivering cutting-edge solutions to clients worldwide. At Accenture, you'll find a vibrant and inclusive work environment that fosters collaboration, creativity, and continuous learning. The company is dedicated to nurturing talent, offering comprehensive training programs and mentorship opportunities to help employees thrive in their careers. Joining Accenture means becoming part of a diverse and dynamic community of technology enthusiasts, where your skills are valued, and you play a pivotal role in driving digital transformation.",
+      "Diversity and inclusion are core values at Accenture, creating a workplace where individuals from diverse backgrounds come together to achieve shared goals. Accenture recognizes the importance of work-life balance and offers flexible work arrangements to accommodate various needs. The company is committed to corporate citizenship, engaging in initiatives that contribute to social responsibility and sustainability. As an Accenture employee, you're not just part of a corporation; you're a member of a socially conscious and forward-thinking organization that embraces your unique perspectives and talents. Embark on a transformative journey with Accenture, where your career aspirations align with a global leader shaping the future of technology.",
+      "Accenture provides more than just a job; it's a platform for personal and professional growth. The collaborative culture at Accenture empowers employees to explore their full potential and drive innovation. With a global presence and a relentless focus on excellence, Accenture offers opportunities to make a meaningful impact. Join Accenture and be part of a team that's redefining what's possible in the digital age.",
+    ],
+    campusHistory: {
+      onCampusRecruitments: 150,
+      lastYearRecruitments: 25,
+      topPackage: 18,
+      averagePackage: 8,
+    },
+    rolesRecruited: [
+      "Management Consultant",
+      "Software Engineer",
+      "Data Scientist",
+      "Business Analyst",
+      "UX/UI Designer",
+      "Cloud Solutions Architect",
+      "AI/ML Engineer",
+      "Cybersecurity Consultant",
+      "Digital Marketing Specialist",
+      "Project Manager",
+      "Network Engineer",
+      "Quality Assurance Analyst",
+      "Full Stack Developer",
+      "Front-end Developer",
+      "Back-end Developer",
+      "Mobile App Developer",
+      "IT Infrastructure Specialist",
+    ],
+  },
   tcs: {
     name: "Tata Consultancy Services",
     abbreviation: "TCS",
@@ -40,6 +113,42 @@ export const COMPANY_OVERVIEW_DATA = {
       "Business Intelligence Analyst",
       "IT Consultant",
       "Front-end Developer",
+    ],
+  },
+  deltax: {
+    name: "Deltax",
+    abbreviation: "DX",
+    logo: DELTAXLogo,
+    description: [
+      "Deltax is a pioneering force in the technology and consulting domain, with a rich history dating back to its inception. Since its establishment, Deltax has been driving innovation and digital evolution, delivering transformative solutions to a diverse clientele. At Deltax, you'll experience a dynamic work culture that fosters creativity, collaboration, and continuous learning. The company is dedicated to nurturing talent, offering extensive training programs and mentorship opportunities to support your professional growth. Joining Deltax means becoming part of a global network of technology enthusiasts, where your skills are valued, and you play a vital role in shaping the future of technology.",
+      "Deltax is deeply committed to diversity and inclusion, creating an inclusive workplace where individuals from various backgrounds come together to achieve excellence. Recognizing the importance of work-life balance, Deltax provides flexible work arrangements to accommodate individual needs. The company's commitment to corporate social responsibility is evident through its initiatives aimed at community development and environmental sustainability. As a member of the Deltax family, you're not just an employee; you're an essential contributor to a socially conscious and forward-thinking organization that embraces your unique talents and perspectives. Join Deltax on a transformative journey, where your career aspirations align with a company that continues to push the boundaries of the digital landscape.",
+      "Deltax offers more than just a job; it's a platform for personal and professional advancement. The collaborative environment at Deltax empowers employees to unleash their potential and drive innovation. With a global footprint and a relentless pursuit of excellence, Deltax provides an opportunity to make a tangible impact. Join Deltax and be part of a team that's shaping the future of technology and redefining possibilities in the digital realm.",
+    ],
+    campusHistory: {
+      onCampusRecruitments: 100,
+      lastYearRecruitments: 20,
+      topPackage: 15,
+      averagePackage: 7.5,
+    },
+    rolesRecruited: [
+      "Data Scientist",
+      "Software Engineer",
+      "Data Analyst",
+      "Business Analyst",
+      "UI/UX Designer",
+      "Cloud Engineer",
+      "Blockchain Developer",
+      "Digital Marketing Specialist",
+      "AI/ML Engineer",
+      "Network Engineer",
+      "Project Manager",
+      "Cybersecurity Specialist",
+      "Quality Assurance Engineer",
+      "Systems Administrator",
+      "Full Stack Developer",
+      "Front-end Developer",
+      "Back-end Developer",
+      "Mobile App Developer",
     ],
   },
   ubs: {

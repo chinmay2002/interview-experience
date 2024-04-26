@@ -833,6 +833,18 @@ export class Gradient {
       "--gradient-color-2",
       "--gradient-color-3",
       "--gradient-color-4",
+      // "--gradient-color-5",
+      // "--gradient-color-6",
+      // "--gradient-color-7",
+      // "--gradient-color-8",
+      // "--gradient-color-9",
+      // "--gradient-color-10",
+      // "--gradient-color-11",
+      // "--gradient-color-12",
+      // "--gradient-color-13",
+      // "--gradient-color-14",
+      // "--gradient-color-15",
+      // "--gradient-color-16",
     ]
       .map((cssPropertyName) => {
         let hex = this.computedCanvasStyle
