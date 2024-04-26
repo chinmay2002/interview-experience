@@ -1,0 +1,22 @@
+.card {
+  align-items: center;
+  border: 1px solid #dddddd;
+  border-radius: 10%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4% 0%;
+  position: relative;
+
+  .logo-wrap {
+    height: 120px;
+    padding: 12%;
+    width: 120px;
+  }
+
+  .name {
+    text-align: center;
+  }
+}

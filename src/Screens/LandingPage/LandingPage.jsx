@@ -1,4 +1,4 @@
-import CompaniesList from "../../components/LandingPage/CompaniesList";
+import CompaniesList from "../../components/LandingPage/CompanyCardCarousel/CompaniesList";
 import Header from "../../components/LandingPage/Header";
 import NavBar from "../../components/Navigation/NavBar";
 

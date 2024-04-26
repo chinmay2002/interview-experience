@@ -10,7 +10,7 @@ import TATALogo from "./CompanyLogos/TATA.png";
 export const COMPANY_OVERVIEW_DATA = {
   tatacommunications: {
     name: "Tata Communications",
-    abbreviation: "Tata Comms",
+    abbreviation: "TCL",
     logo: TATALogo,
     description: [
       "Tata Communications is a leading global provider of digital infrastructure and telecommunications solutions, with a legacy spanning decades. Since its inception, Tata Communications has been driving connectivity and innovation across the globe, delivering state-of-the-art solutions to a diverse clientele. At Tata Communications, you'll experience a dynamic and inclusive work culture that encourages collaboration, creativity, and continuous learning. The company is committed to nurturing talent, offering extensive training programs and mentorship opportunities to support employees in their professional development. Joining Tata Communications means becoming part of a global network of technology experts, where your skills are valued, and you contribute to shaping the digital future.",
