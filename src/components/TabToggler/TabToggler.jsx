@@ -24,6 +24,8 @@ const TabToggler = () => {
         className={`button ${
           activeButton === "button2" ? "active" : "inactive"
         }`}
+        disabled
+        style={{ cursor: "not-allowed" }}
       >
         Preparation Guide
       </button>
