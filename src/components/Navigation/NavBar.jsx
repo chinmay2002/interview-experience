@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Dropdown from "./Dropdown";
 const NavBar = () => {
   return (
     <div className="bg-white shadow-lg">
@@ -14,9 +15,7 @@ const NavBar = () => {
             <a href="#" className="text-[#313866]">
               Contact
             </a>
-            <Link to={"/companyform"} className="text-[#313866]">
-              Company Form
-            </Link>
+            <Dropdown />
             <button className="text-white bg-[#313866] text-md  p-2 rounded-md">
               Sign Up{" "}
             </button>

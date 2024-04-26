@@ -42,9 +42,18 @@ const CompanyCriteriaPage = () => {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "90vh",
+      }}
+    >
       <div style={{ width: "80%", maxWidth: "400px", textAlign: "center" }}>
-        <Typography fontSize={24} mb={4}>Company Criteria Page</Typography>
+        <Typography fontSize={24} mb={4}>
+          Company Criteria Page
+        </Typography>
         <TextField
           label="Select Date"
           type="date"
@@ -56,7 +65,7 @@ const CompanyCriteriaPage = () => {
           fullWidth
           margin="normal"
         />
-         <TextField
+        <TextField
           label="Company Name"
           variant="outlined"
           fullWidth
@@ -96,8 +105,17 @@ const CompanyCriteriaPage = () => {
           onChange={(e) => setEligibilityCriteria(e.target.value)}
           margin="normal"
         />
-       
-        <Button variant="contained" color="primary" onClick={handleSaveCriteria} style={{ backgroundColor: "black", color: "white",  marginTop: "20px" }}>
+
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleSaveCriteria}
+          style={{
+            backgroundColor: "black",
+            color: "white",
+            marginTop: "20px",
+          }}
+        >
           Save Criteria
         </Button>
       </div>
