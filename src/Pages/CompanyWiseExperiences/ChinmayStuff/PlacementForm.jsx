@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
-import { db } from '../firebaseConfig';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
+import { useState, useEffect } from "react";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import { db } from "../../../firebaseConfig";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
 
 const PlacementForm = () => {
-  const [personName, setPersonName] = useState('');
-  const [branch, setBranch] = useState('');
-  const [experience, setExperience] = useState('');
-  const [experience2, setExperience2] = useState('');
-  const [selectedCompany, setSelectedCompany] = useState('');
+  const [personName, setPersonName] = useState("");
+  const [branch, setBranch] = useState("");
+  const [experience, setExperience] = useState("");
+  const [experience2, setExperience2] = useState("");
+  const [selectedCompany, setSelectedCompany] = useState("");
   const [companies, setCompanies] = useState([]);
 
   // Fetch available companies from Firestore
   const fetchCompanies = async () => {
-    const companiesSnapshot = await getDocs(collection(db, 'companies'));
+    const companiesSnapshot = await getDocs(collection(db, "companies"));
     const companiesData = companiesSnapshot.docs.map((doc) => ({
       id: doc.id,
       name: doc.data().name,
@@ -34,7 +34,7 @@ const PlacementForm = () => {
 
     // Add data to Firestore
     try {
-      const docRef = await addDoc(collection(db, 'placements'), {
+      const docRef = await addDoc(collection(db, "placements"), {
         personName,
         branch,
         experience,
@@ -42,15 +42,15 @@ const PlacementForm = () => {
         companyName: selectedCompany,
       });
 
-      console.log('Document written with ID: ', docRef.id);
+      console.log("Document written with ID: ", docRef.id);
       // Reset form after submission
-      setPersonName('');
-      setBranch('');
-      setExperience('');
-      setExperience2('');
-      setSelectedCompany('');
+      setPersonName("");
+      setBranch("");
+      setExperience("");
+      setExperience2("");
+      setSelectedCompany("");
     } catch (error) {
-      console.error('Error adding document: ', error);
+      console.error("Error adding document: ", error);
     }
   };
 
@@ -62,7 +62,7 @@ const PlacementForm = () => {
         fullWidth
         value={personName}
         onChange={(e) => setPersonName(e.target.value)}
-        margin="dense" 
+        margin="dense"
       />
       <TextField
         label="Branch"
@@ -70,7 +70,7 @@ const PlacementForm = () => {
         fullWidth
         value={branch}
         onChange={(e) => setBranch(e.target.value)}
-        margin="dense" 
+        margin="dense"
       />
       <TextField
         label="Experience"
@@ -80,7 +80,7 @@ const PlacementForm = () => {
         rows={4}
         value={experience}
         onChange={(e) => setExperience(e.target.value)}
-        margin="dense" 
+        margin="dense"
       />
       <TextField
         label="Experience 2"
@@ -90,7 +90,7 @@ const PlacementForm = () => {
         rows={4}
         value={experience2}
         onChange={(e) => setExperience2(e.target.value)}
-        margin="dense" 
+        margin="dense"
       />
       <Select
         label="Company"
