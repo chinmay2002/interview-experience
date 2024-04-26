@@ -19,15 +19,20 @@ function App() {
       {/* <LandingPage /> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
-      
-        <Route path="/companyform" element={<CompanyForm />} />//done
-        <Route path="/placementform" element={<PlacementForm />} />//done
-        <Route path="/companycriteriaform" element={<CompanyCriteriaPage />} />//done
-        <Route path="/companydetails" element={<CriteriaDetailsPage />} />//done
+        <Route path="/companyform" element={<CompanyForm />} />
+        <Route path="/placementform" element={<PlacementForm />} />
+        <Route path="/companycriteriaform" element={<CompanyCriteriaPage />} />
+        <Route path="/companydetails" element={<CriteriaDetailsPage />} />
         <Route path="/companyoverview/:company" element={<CompanyOverview />} />
         <Route path="/companylist" element={<CompanyListComponent />} />
-        <Route path="/companywiseexperience" element={<CompanyWiseExperiences />} />//done
-        <Route path="/placementdetailscomponent" element={<PlacementDetailsComponent />} />
+        <Route
+          path="/companywiseexperience"
+          element={<CompanyWiseExperiences />}
+        />
+        <Route
+          path="/placementdetailscomponent"
+          element={<PlacementDetailsComponent />}
+        />
       </Routes>
     </Router>
   );

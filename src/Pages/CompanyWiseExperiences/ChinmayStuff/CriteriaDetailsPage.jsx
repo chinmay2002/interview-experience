@@ -1,4 +1,3 @@
-// CriteriaDetailsPage.jsx
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
@@ -44,31 +43,51 @@ const CriteriaDetailsPage = () => {
   };
 
   return (
-    <div>
-      <h1>Criteria Details Page</h1>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold mb-4">Criteria Details Page</h1>
 
-      <div>
-        <label htmlFor="year">Search by Year:</label>
+      <div className="flex items-center space-x-4 mb-4">
+        <label htmlFor="year" className="font-semibold">
+          Search by Year:
+        </label>
         <input
           type="text"
           id="year"
           value={selectedYear}
           onChange={(e) => setSelectedYear(e.target.value)}
+          className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:border-indigo-500"
         />
-        <button onClick={handleSearch}>Search</button>
+        <button
+          onClick={handleSearch}
+          className="bg-indigo-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+        >
+          Search
+        </button>
       </div>
 
       {selectedYear && (
-        <ul>
+        <div className="grid grid-cols-1 gap-4">
           {filteredCriteria.map((criteria) => (
-            <li key={criteria.id}>
-              <strong>Date:</strong> {criteria.date},{" "}
-              <strong>Selection Message:</strong> {criteria.selectionMessage},{" "}
-              <strong>Link:</strong> {criteria.link},{" "}
-              <strong>Company Name:</strong> {criteria.companyName}
-            </li>
+            <div
+              key={criteria.id}
+              className="bg-white w-1/2 rounded-lg shadow-md p-4"
+            >
+              <div className="flex justify-between mb-2">
+                <p className="text-lg font-semibold">{criteria.companyName}</p>
+                <p className="text-sm text-gray-500">{criteria.date}</p>
+              </div>
+              <p className="text-gray-700 ">{criteria.selectionMessage}</p>
+              <a
+                href={criteria.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:underline"
+              >
+                {criteria.link}
+              </a>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );
