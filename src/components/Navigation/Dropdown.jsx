@@ -10,7 +10,6 @@ const Dropdown = () => {
 
   return (
     <div className="relative inline-flex items-center">
-      <h2>Hello world</h2>
       <select
         value={selectedOption}
         onChange={handleChange}
