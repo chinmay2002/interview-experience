@@ -1,5 +1,5 @@
-export const getColorPalette = () => {
-  var canvas = document.getElementById("company-logo");
+export const getColorPalette = (id) => {
+  var canvas = document.getElementById(id || "company-logo");
   var context = canvas.getContext("2d");
 
   var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
