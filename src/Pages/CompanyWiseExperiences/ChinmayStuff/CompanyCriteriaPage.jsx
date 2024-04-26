@@ -1,18 +1,16 @@
-// CompanyCriteriaPage.jsx
 import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../../../firebaseConfig";
+import { Typography } from "@mui/material";
 
 const CompanyCriteriaPage = () => {
   const [selectedDate, setSelectedDate] = useState("");
-  const [criteria, setCriteria] = useState([]);
-  const [selectionMessage, setSelectionMessage] = useState("");
-  const [link, setLink] = useState("");
+  const [ctc, setCtc] = useState("");
+  const [jobRole, setJobRole] = useState("");
+  const [jobLocation, setJobLocation] = useState("");
+  const [eligibilityCriteria, setEligibilityCriteria] = useState("");
   const [companyName, setCompanyName] = useState("");
 
   const handleDateChange = (event) => {
@@ -24,15 +22,19 @@ const CompanyCriteriaPage = () => {
     try {
       await addDoc(collection(db, "criteria"), {
         date: selectedDate,
-        selectionMessage,
-        link,
+        ctc,
+        jobRole,
+        jobLocation,
+        eligibilityCriteria,
         companyName,
       });
 
       // Clear form fields after saving
       setSelectedDate("");
-      setSelectionMessage("");
-      setLink("");
+      setCtc("");
+      setJobRole("");
+      setJobLocation("");
+      setEligibilityCriteria("");
       setCompanyName("");
     } catch (error) {
       console.error("Error adding criteria: ", error);
@@ -40,44 +42,65 @@ const CompanyCriteriaPage = () => {
   };
 
   return (
-    <div>
-      <h1>Company Criteria Page</h1>
-      <TextField
-        label="Select Date"
-        type="date"
-        value={selectedDate}
-        onChange={handleDateChange}
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
-      <TextField
-        label="Selection Message"
-        variant="outlined"
-        fullWidth
-        value={selectionMessage}
-        onChange={(e) => setSelectionMessage(e.target.value)}
-        margin="normal"
-      />
-      <TextField
-        label="Link"
-        variant="outlined"
-        fullWidth
-        value={link}
-        onChange={(e) => setLink(e.target.value)}
-        margin="normal"
-      />
-      <TextField
-        label="Company Name"
-        variant="outlined"
-        fullWidth
-        value={companyName}
-        onChange={(e) => setCompanyName(e.target.value)}
-        margin="normal"
-      />
-      <Button variant="contained" color="primary" onClick={handleSaveCriteria}>
-        Save Criteria
-      </Button>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+      <div style={{ width: "80%", maxWidth: "400px", textAlign: "center" }}>
+        <Typography fontSize={24} mb={4}>Company Criteria Page</Typography>
+        <TextField
+          label="Select Date"
+          type="date"
+          value={selectedDate}
+          onChange={handleDateChange}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          fullWidth
+          margin="normal"
+        />
+         <TextField
+          label="Company Name"
+          variant="outlined"
+          fullWidth
+          value={companyName}
+          onChange={(e) => setCompanyName(e.target.value)}
+          margin="normal"
+        />
+        <TextField
+          label="CTC"
+          variant="outlined"
+          fullWidth
+          value={ctc}
+          onChange={(e) => setCtc(e.target.value)}
+          margin="normal"
+        />
+        <TextField
+          label="Job Role"
+          variant="outlined"
+          fullWidth
+          value={jobRole}
+          onChange={(e) => setJobRole(e.target.value)}
+          margin="normal"
+        />
+        <TextField
+          label="Job Location"
+          variant="outlined"
+          fullWidth
+          value={jobLocation}
+          onChange={(e) => setJobLocation(e.target.value)}
+          margin="normal"
+        />
+        <TextField
+          label="Eligibility Criteria"
+          variant="outlined"
+          fullWidth
+          value={eligibilityCriteria}
+          onChange={(e) => setEligibilityCriteria(e.target.value)}
+          margin="normal"
+        />
+       
+        <Button variant="contained" color="primary" onClick={handleSaveCriteria} style={{ backgroundColor: "black", color: "white",  marginTop: "20px" }}>
+          Save Criteria
+        </Button>
+      </div>
     </div>
   );
 };
