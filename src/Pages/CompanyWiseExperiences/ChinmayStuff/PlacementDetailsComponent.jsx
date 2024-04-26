@@ -25,25 +25,6 @@ const PlacementDetailsComponent = () => {
   //     fetchPlacements();
   //   }
   // }, [selectedCompany]);
-  const [upvotes, setUpvotes] = useState(0);
-
-  const handleUpvote = async () => {
-    try {
-      // Implement your logic to update upvote count in the database
-      // For example, you can use Firestore to update the upvote count for a specific placement
-      // Here's a hypothetical example assuming you have a 'placements' collection in Firestore
-      const placementRef = db.collection("placements").doc("placementId");
-      await placementRef.update({
-        upvotes: upvotes + 1, // Increment upvote count by 1
-      });
-
-      // Update the upvotes state locally
-      setUpvotes(upvotes + 1);
-    } catch (error) {
-      console.error("Error upvoting: ", error);
-    }
-  };
-
   return (
     <>
       {" "}
@@ -72,7 +53,7 @@ const PlacementDetailsComponent = () => {
             <div className="flex gap-2">
               <FaEye className="text-xl" /> Views
             </div>
-            <div className="flex gap-2 cursor-pointer " onClick={handleUpvote}>
+            <div className="flex gap-2 cursor-pointer ">
               <MdOutlineArrowUpward className="text-xl" /> Upvote
             </div>
           </div>
