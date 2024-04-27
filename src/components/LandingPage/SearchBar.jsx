@@ -27,7 +27,7 @@ const SearchBar = () => {
 
   const handleSubmit = () => {
     if (selectedCompany) {
-      const lowercaseCompany = selectedCompany.toLowerCase();
+      const lowercaseCompany = selectedCompany.toLowerCase().replace(/\s/g, "");
       navigate(`/companyoverview/${lowercaseCompany}`);
     }
   };

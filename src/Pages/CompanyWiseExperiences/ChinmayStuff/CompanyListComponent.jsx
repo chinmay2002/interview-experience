@@ -15,6 +15,7 @@ const CompanyListComponent = ({ onSelectCompany }) => {
         name: doc.data().name,
       }));
       setCompanies(companiesData);
+      console.log(companies);
     };
 
     fetchCompanies();
