@@ -7,6 +7,7 @@ import TabToggler from "../../components/TabToggler/TabToggler";
 
 import InfoCard from "./InfoCard/InfoCard";
 // import RolesRecruited from "./RolesRecruited";
+import PlacementDetailsComponent from "../CompanyWiseExperiences/ChinmayStuff/PlacementDetailsComponent";
 
 import "./CompanyOverview.scss";
 
@@ -87,7 +88,7 @@ const CompanyOverview = () => {
       window.removeEventListener("resize", updateDisplayRoles);
     };
   }, [company]);
-
+  console.log(COMPANY_OVERVIEW_DATA[company].name);
   return (
     <div className="company-overview-wrapper">
       <div className="company-banner">
@@ -177,6 +178,11 @@ const CompanyOverview = () => {
             <span>{displayRoles.join(" | ")}</span>
           </div>
           <TabToggler />
+          <div className="w-full ">
+            <PlacementDetailsComponent
+              selectedCompany={COMPANY_OVERVIEW_DATA[company].name}
+            />
+          </div>
         </div>
       </div>
     </div>

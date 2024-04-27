@@ -12,9 +12,12 @@ const NavBar = () => {
             <Link to={"/"} className="text-[#313866]">
               Home
             </Link>
-            <a href="#" className="text-[#313866]">
-              Contact
-            </a>
+            <Link
+              to={"/companydetails"}
+              className="text-green-800 hover:text-green-400"
+            >
+              Hiring *
+            </Link>
             <Dropdown />
             <button className="text-white bg-[#313866] text-md  p-2 rounded-md">
               Sign Up{" "}
